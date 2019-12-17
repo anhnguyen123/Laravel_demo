@@ -382,7 +382,12 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'ajax'],function(){
 		Route::get('loaitin/{idTheLoai}','AjaxController@getLoaiTin');
 	});
+
 	
+});
+
+Route::get('trangchu',function(){
+	return view('pages.trangchu');
 });
 
 
