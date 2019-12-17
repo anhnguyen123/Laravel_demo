@@ -319,7 +319,9 @@ Route::get('thu',function(){
 	return view('admin.theloai.danhsach');
 });
 
-
+Route::get('admin/dangnhap','UserController@getDangNhapAdmin');
+Route::post('admin/dangnhap','UserController@postDangNhapAdmin');
+Route::get('admin/logout','UserController@getDangXuatAdmin');
 Route::group(['prefix'=>'admin'],function(){
 
 	Route::group(['prefix'=>'theloai'],function(){
