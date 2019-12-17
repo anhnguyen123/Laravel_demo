@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\TheLoai;
+use App\Slide;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -24,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $theloai = TheLoai::all();
+        $slide = Slide::all();
+        view()->share('slide', $slide); 
         view()->share('theloai', $theloai); 
     }
 }
