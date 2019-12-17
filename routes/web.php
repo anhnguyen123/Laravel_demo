@@ -322,7 +322,7 @@ Route::get('thu',function(){
 Route::get('admin/dangnhap','UserController@getDangNhapAdmin');
 Route::post('admin/dangnhap','UserController@postDangNhapAdmin');
 Route::get('admin/logout','UserController@getDangXuatAdmin');
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 	Route::group(['prefix'=>'theloai'],function(){
 		//admin/theloai/them
