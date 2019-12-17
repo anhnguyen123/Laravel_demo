@@ -59,7 +59,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->name = $request->Name_form;
         $user->quyen = $request->Quyen_form;
-        echo $request->changePassword;
+        //echo $request->changePassword;
         if($request->changePassword == 'on')
         {
             $this->validate($request,
@@ -82,6 +82,7 @@ class UserController extends Controller
     public function getXoa($id){
         $user = User::find($id);
         $user->delete();
+        //đang chú thích đây mà
         return redirect('admin/user/danhsach')->with('thongbao','Đã xoá thành công');
     }
 }
