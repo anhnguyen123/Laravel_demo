@@ -75,7 +75,36 @@ class PagesController extends Controller
         $user = Auth::user();
         return view('pages.nguoidung',['nguoidung'=>$user]);
     }
+   
     public function postNguoiDung(Request $request){
-        
+        $this->validate($request,
+        [            
+            'Name_form'=>'required|min:6',                      
+        ],
+        [            
+            'Name_form.requied'=>'Bạn chưa nhập tên',    
+            'Name_form.min'   =>'Tên người dùng phải có ít nhất 6 ký tự',                             
+        ]);
+        $user = Auth::user();
+        $user->name = $request->Name_form;        
+        echo $request->changePassword;
+        if($request->changePassword == 'on')
+        {
+            $this->validate($request,
+        [ 
+            'Password_form'=>'required|min:3|max:32',
+            'Password_agian_form'=>'required|same:Password_form'             
+        ],
+        [            
+            'Password_form.required'=>'Bạn chưa nhập mật khẩu',
+            'Password_form.min'=>'Mật khẩu phải lớn hơn 3 và nhỏ hơn 32 ký tự',
+            'Password_form.max'=>'Mật khẩu phải lớn hơn 3 và nhỏ hơn 32 ký tự',
+            'Password_agian_form.required'=>'Bạn chưa nhập lại password',
+            'Password_agian_form.same'=>'Password không giống với lần đầu'                
+        ]);
+            $user->password = bcrypt($request->Password_form);
+        }
+        $user->save();
+        return redirect('nguoidung')->with('thongbao','Bạn đã sửa thành công');
     }
 }

@@ -10,10 +10,21 @@
                 <div class="panel panel-default">
 				  	<div class="panel-heading">Thông tin tài khoản</div>
 				  	<div class="panel-body">
-				    	<form>
-				    		<div>
+                        @if(count($errors) > 0)
+                            <div class="alert alert-danger">
+                            @foreach($errors->all() as $err)
+                                {{$err}}<br>
+                            @endforeach
+                            </div>
+                        @endif
+                        @if(session('thongbao'))
+                            <div class="alert alert-success">{{session('thongbao')}}</div>
+                        @endif
+				    	<form action="nguoidung" method="post">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <div>
 				    			<label>Họ tên</label>
-                            <input value="{{$nguoidung->name}}" type="text" class="form-control" placeholder="Username" name="name" aria-describedby="basic-addon1">
+                            <input value="{{$nguoidung->name}}" type="text" class="form-control" placeholder="Username" name="Name_form" aria-describedby="basic-addon1">
 							</div>
 							<br>
 							<div>
@@ -26,15 +37,15 @@
 							<div>
 								<input type="checkbox" id="changePassword" name="changePassword">
 				    			<label>Đổi mật khẩu</label>
-							  	<input disabled type="password" class="form-control password" name="password" aria-describedby="basic-addon1">
+							  	<input disabled type="password" class="form-control password" name="Password_form" aria-describedby="basic-addon1">
 							</div>
 							<br>
 							<div>
 				    			<label>Nhập lại mật khẩu</label>
-							  	<input disabled type="password" class="form-control password" name="passwordAgain" aria-describedby="basic-addon1">
+							  	<input disabled type="password" class="form-control password" name="Password_agian_form" aria-describedby="basic-addon1">
 							</div>
 							<br>
-							<button type="button" class="btn btn-default">Sửa
+							<button type="submit" class="btn btn-default">Sửa
 							</button>
 
 				    	</form>
