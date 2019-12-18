@@ -34,7 +34,7 @@
                             <a href="#">Đăng ký</a>
                         </li>
                         <li>
-                            <a href="#">Đăng nhập</a>
+                            <a href="dangnhap">Đăng nhập</a>
                         </li>
                     @else
                         <li>
