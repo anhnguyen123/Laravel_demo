@@ -14,10 +14,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Giới thiệu</a>
+                        <a href="gioithieu">Giới thiệu</a>
                     </li>
                     <li>
-                        <a href="#">Liên hệ</a>
+                        <a href="lienhe">Liên hệ</a>
                     </li>
                 </ul>
 
@@ -38,7 +38,7 @@
                         </li>
                     @else
                         <li>
-                            <a>
+                            <a href="nguoidung">
                                 <span class ="glyphicon glyphicon-user"></span>
                                 {{Auth::user()->name}}
                             </a>
