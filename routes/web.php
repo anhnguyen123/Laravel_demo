@@ -399,3 +399,4 @@ Route::get('nguoidung','PagesController@getNguoiDung');
 Route::post('nguoidung','PagesController@postNguoiDung');
 Route::post('dangky','PagesController@postDangKy');
 Route::get('dangky','PagesController@getDangKy');
+Route::post('timkiem','PagesController@timkiem');

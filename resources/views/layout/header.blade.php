@@ -21,17 +21,18 @@
                     </li>
                 </ul>
 
-                <form class="navbar-form navbar-left" role="search">
-			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="Search">
+                <form class="navbar-form navbar-left" role="search" action="timkiem" method="post">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <div class="form-group">
+			          <input type="text" name="tukhoa" class="form-control" placeholder="Tìm kiếm">
 			        </div>
-			        <button type="submit" class="btn btn-default">Submit</button>
+			        <button type="submit" class="btn btn-default">Tìm</button>
 			    </form>
 
 			    <ul class="nav navbar-nav pull-right">
                     @if (!Auth::check())
                         <li>
-                            <a href="#">Đăng ký</a>
+                            <a href="dangky">Đăng ký</a>
                         </li>
                         <li>
                             <a href="dangnhap">Đăng nhập</a>
