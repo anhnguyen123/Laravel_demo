@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\TheLoai;
 use Illuminate\Http\Request;
-
+use App\LoaiTin;
+use App\TinTuc;
 class PagesController extends Controller
 {
     // public function __contruct(){
@@ -30,5 +31,10 @@ class PagesController extends Controller
         // $theloai = TheLoai::all();
         // return view('pages.lienhe',['theloai'=>$theloai]);
         return view('pages.lienhe');
+    }
+    public function loaitin($id){
+        $loaitin = LoaiTin::find($id);
+        $tintuc = TinTuc::where('idLoaiTin',$id)->paginate(10);
+        return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc]);
     }
 }

@@ -12,7 +12,7 @@
                     <ul>
                         @foreach ($tl->loaitin as $lt)
                             <li class="list-group-item">
-                            <a href="#">{{$lt->Ten}}</a>
+                            <a href="loaitin/{{$lt->id}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a>
                             </li>
                         @endforeach
                     </ul> 

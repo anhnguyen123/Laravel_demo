@@ -389,4 +389,5 @@ Route::group(['prefix'=>'admin'],function(){
 Route::get('trangchu','PagesController@trangchu');
 
 Route::get('lienhe','PagesController@lienhe');
+Route::get('loaitin/{id}/{TenKhongDau}.html','PagesController@loaitin');
 
