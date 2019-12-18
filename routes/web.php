@@ -283,9 +283,9 @@ Route::get('nhapdiem',function(){
 })->name('nhapdiem');
 
 // Tìm hiểu AUTH
-Route::get('dangnhap',function(){
-	return view('dangnhap');
-});
+// Route::get('dangnhap',function(){
+// 	return view('dangnhap');
+// });
 Route::post('login','AuthController@login')->name('login');
 
 //logout
@@ -391,4 +391,6 @@ Route::get('trangchu','PagesController@trangchu');
 Route::get('lienhe','PagesController@lienhe');
 Route::get('loaitin/{id}/{TenKhongDau}.html','PagesController@loaitin');
 Route::get('tintuc/{id}/{TieuDeKhongDau}.html','PagesController@tintuc');
+Route::get('dangnhap','PagesController@getDangNhap');
+Route::post('dangnhap','PagesController@postDangNhap');
 
