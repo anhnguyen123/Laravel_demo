@@ -69,6 +69,6 @@ class PagesController extends Controller
     }
     public function dangxuat(){
         Auth::logout();
-        return redirect('dangnhap');
+        return redirect('trangchu');
     }
 }
