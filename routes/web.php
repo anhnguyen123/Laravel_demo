@@ -397,3 +397,5 @@ Route::get('dangxuat','PagesController@dangxuat');
 Route::post('comment/{id}','Commentcontroller@postComment');
 Route::get('nguoidung','PagesController@getNguoiDung');
 Route::post('nguoidung','PagesController@postNguoiDung');
+Route::post('dangky','PagesController@postDangKy');
+Route::get('dangky','PagesController@getDangKy');
